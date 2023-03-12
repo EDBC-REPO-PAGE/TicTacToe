@@ -1,0 +1,69 @@
+<main>
+
+    <section class="uk-padding-large uk-position-center">
+        <ul class="uk-list uk-flex uk-flex-wrap uk-child-width-1-3">
+        /°(()=>{
+            const result = new Array(9); result.fill(0);
+            return result.map((x,i)=>`
+                <li class="uk-padding-small uk-child-width-1-1 uk-margin-remove">
+                    <a class="uk-button uk-secondary uk-enphasis uk-height-small"
+                       button="${i}" value="" onclick="window.active(this)"> 
+                    </a>
+                </li>
+            `).join('');
+        })()°/
+        </ul>
+    </section>
+
+    <section class="uk-padding-large uk-position-bottom uk-position-small uk-flex uk-flex-center">
+        <div class="uk-pading uk-rounded uk-darker uk-width-1-2 uk-flex uk-flex-center">
+
+            <div class="uk-padding">
+                <a class="uk-button uk-warning uk-enphasis
+                          uk-default-enphasis-hover uk-rounded"
+                    onclick="window.playGame()"
+                    uk-icon="icon:play">
+                </a>
+            </div>
+
+            <div class="uk-padding">
+                <a class="uk-button uk-warning uk-enphasis
+                          uk-default-enphasis-hover uk-rounded"
+                    onclick="window.resetGame()"
+                    uk-icon="icon:refresh">
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!--──────────────────────────────────────────────────────────────────────────────────────────────-->
+
+<script>
+(function(){
+
+    window.resetGame = function(){
+        window.state.set({ state: 'reset' })
+    }
+
+    window.playGame = function(){
+        window.state.set(state=>({ 
+            state: state.state == 'play' ? 'stop' : 'play' 
+        }))
+    }
+
+    window.active = function(element){
+        if( window.state.get('state') == 'stop' ) return 0;
+        if( window.state.get('type') == 'cpu' ) return 0;
+        if( element.getAttribute('value') == '' ){
+            element.setAttribute('value','O');
+            window.state.set({ type: 'cpu' });
+        }
+    }
+
+})()
+</script>
+
+<!--──────────────────────────────────────────────────────────────────────────────────────────────-->

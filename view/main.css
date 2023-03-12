@@ -1,0 +1,46 @@
+/*--─────────────────────────────────────────────────────────────────────────────────────────--*/
+
+@font-face {
+    font-family: 'fr-light'; font-display: swap;
+    src: url('./font/OR_Light.otf');
+}
+
+@font-face {
+    font-family: 'fr-bold'; font-display: swap;
+    src: url('./font/OR_Bold.otf');
+}
+
+@font-face {
+    font-family: 'fr-regular'; font-display: swap;
+    src: url('./font/OR_Regular.otf');
+}
+
+/*--─────────────────────────────────────────────────────────────────────────────────────────--*/
+
+* { user-select: none !important; }
+
+/*--─────────────────────────────────────────────────────────────────────────────────────────--*/
+
+a[button]:hover{ box-shadow: 0px 0px 10px #000 }
+
+a[button='0']{ border-top-left-radius: 15px; }
+a[button='2']{ border-top-right-radius: 15px; }
+a[button='6']{ border-bottom-left-radius: 15px; }
+a[button='8']{ border-bottom-right-radius: 15px; }
+
+a[value='X']{ background-color: var(--color-danger) !important }
+a[value='O']{ background-color: var(--color-primary) !important }
+
+/*--─────────────────────────────────────────────────────────────────────────────────────────--*/
+
+body { background: linear-gradient( 0deg, #816203, var(--color-warning) 50% ); }
+
+.uk-darker{ background-color: rgba(0, 0, 0, 0.727); }
+.uk-logo { font-family: fr-bold; font-size: 30px; }
+
+h1 { font-family: fr-bold; font-size: 60px; }
+h1,h2,h3,h4,h5,h6 { margin: 5px }
+h2 { font-family: fr-regular; }
+h3 { font-family: fr-light; }
+
+/*--─────────────────────────────────────────────────────────────────────────────────────────--*/
